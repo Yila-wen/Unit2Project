@@ -1,0 +1,41 @@
+Design Document
+-LinearEquation
+Instance Variables:
+
+private int x - x coordinate
+private int y - y coordinate
+private double y-int - y intercept coordinate
+private double x-int - x intercept coordinate
+private double distance - distance between the pair of points
+Constructor:
+
+public LinearEquation(int xcoord1,int ycoord1,int xcoord2,int ycoord2)
+takes in both pairs coordinates
+    checks that x1 doesn't equal x2
+         Finds slope in fraction form , YIntercept()
+            Puts information to y=mx+b form
+
+private slope()
+        substitutes values into distance formula, (d = √((x2-x1)^2 + (y2-y1)^2))
+            return slope
+
+private distance()
+    substitutes values into distance formula,
+        return slope / distance between 2 points
+
+private yIntercept()
+    finds the y-int of the slope using one of the pairs
+
+Methods:
+
+public String toString()
+    prints the given two points, slope, y-iny, the equation of the line, distance between the 2
+
+public String coordinatePoint(int x)
+    takes x value finds y value using linear equation.
+
+EquationRunner.java
+
+1. Ask user to enter first coordinate point
+2. Ask user to enter second coordinate point
+3. 
