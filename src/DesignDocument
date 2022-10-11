@@ -15,21 +15,21 @@ takes in both pairs coordinates
          Finds slope in fraction form , YIntercept()
             Puts information to y=mx+b form
 
-private slope()
-        substitutes values into distance formula, (d = √((x2-x1)^2 + (y2-y1)^2))
-            return slope
+private double slope()
+        substitutes values into distance formula,
+            return double slope
 
-private distance()
-    substitutes values into distance formula,
-        return slope / distance between 2 points
+private double distance()
+    substitutes values into distance formula, (d = √((x2-x1)^2 + (y2-y1)^2))
+        return double distance between 2 points
 
-private yIntercept()
+private int yIntercept()
     finds the y-int of the slope using one of the pairs
-
+        return int y-int
 Methods:
 
 public String toString()
-    prints the given two points, slope, y-iny, the equation of the line, distance between the 2
+    prints the given two points, slope, y-int, the equation of the line, distance between the 2
 
 public String coordinatePoint(int x)
     takes x value finds y value using linear equation.
@@ -38,4 +38,5 @@ EquationRunner.java
 
 1. Ask user to enter first coordinate point
 2. Ask user to enter second coordinate point
-3. 
+3. public String toString()
+4. Asks the user for an x coordinate , gives back the y coordinate that x value lies on
