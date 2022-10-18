@@ -7,10 +7,9 @@ private in x2 - 2nd x coordinate
 private int y - y coordinate
 private int y2 - 2nd y coordinate
 private double slopeInt - slope intercept value
-private double slopex - x coord of slope
-private double slopey - y coord of slope
-private double y-int - y intercept coordinate
-private double x-int - x intercept coordinate
+private double slopeX - x coord of slope
+private double slopeY - y coord of slope
+private double yIntercept - y intercept coordinate
 private double distance - distance between the pair of points
 Constructor:
 

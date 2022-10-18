@@ -1,5 +1,9 @@
 Design Document
--LinearEquation
+------------------------------------------------------------------------------------------------------------------------
+import java math
+import java decimalformat
+
+Class: LinearEquation
 Instance Variables:
 
 private int x - x coordinate
@@ -7,41 +11,59 @@ private in x2 - 2nd x coordinate
 private int y - y coordinate
 private int y2 - 2nd y coordinate
 private double slopeInt - slope intercept value
-private double slopex - x coord of slope
-private double slopey - y coord of slope
-private double y-int - y intercept coordinate
-private double x-int - x intercept coordinate
+private double slopeX - x coord of slope
+private double slopeY - y coord of slope
+private double yIntercept - y intercept coordinate
 private double distance - distance between the pair of points
 Constructor:
 
-public LinearEquation(int xcoord1,int ycoord1,int xcoord2,int ycoord2)
-takes in both pairs coordinates
-    checks that x1 doesn't equal x2
-         Finds slope in fraction form , YIntercept()
-            Puts information to y=mx+b form
+public LinearEquation(String xcoord1,String ycoord1,String xcoord2,String ycoord2)
+    Turns string inputs into integer values
+        Assigns values to slopeX and slopeY
 
 private double slope()
-        substitutes values into slope formula,
+        substitutes values into slope formula,(y2-y1)/(x2-x1)
             return double slope
+
+private double yIntercept()
+    substitutes values into y-intercept formula, (-(slope) * x + y)
+        return double y-int
 
 private double distance()
     substitutes values into distance formula, (d = √((x2-x1)^2 + (y2-y1)^2))
         return double distance between 2 points
 
-private int yIntercept()
-    finds the y-int of the slope using one of the pairs
-        return int y-int
+private String slopeIntForm()
+    if y-int >= 0 then return slope intercept form : y = mx + b
+        else if y-int < 0 then return slope intercept form: y = mx - |b|
+            return null
+
+private String pairSetter(int xvalue, int yvalue)
+    return (xvalue,yvalue)
+
 Methods:
 
 public String toString()
     prints the given two points, slope, y-int, the equation of the line, distance between the 2
 
-public String coordinatePoint(int x)
-    takes x value finds y value using linear equation.
+public String coordinatePoint(double x)
+    takes the x value to find the y value using linear equation, y = slope * x + y-int
+        assigns value to y3
+            return (x, y3)
 
-EquationRunner.java
+------------------------------------------------------------------------------------------------------------------------
+import java scanner
+
+Class: Runner
 
 1. Ask user to enter first coordinate point
+    Uses Scanner to save provided coordinate
+        Split coordinates up and assign x coordinate to xcoord variable and y coordinate to ycoord variable
 2. Ask user to enter second coordinate point
-3. public String toString()
-4. Asks the user for an x coordinate , gives back the y coordinate that x value lies on
+    Uses Scanner to save provided coordinate
+        Split coordinates up and assign x coordinate to 2nd xcoord variable and y coordinate to 2nd ycoord variable
+3. Create new LinearEquation object with given coordinates stored in variables.
+4. print new object's toString
+5. Asks the user for an x coordinate
+    Uses Scanner to save provided x coordinate
+    Prints new coordinate using coordinatepoint(x)
