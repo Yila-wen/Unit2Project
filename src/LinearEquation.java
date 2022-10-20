@@ -7,8 +7,8 @@ public class LinearEquation {
     private int y;
     private int y2;
     private double slopeInt;
-    private double slopeX;
-    private double slopeY;
+    private int slopeX;
+    private int slopeY;
     private double yIntercept;
     private double distance;
 
@@ -24,12 +24,12 @@ public class LinearEquation {
     }
 
     private double slope() {
-        slopeInt = (y2 - y) / (x2 - x);
+        slopeInt =(double)slopeY/ slopeX;
         return slopeInt;
     }
 
     private double yIntercept() {
-        yIntercept = (-(slopeInt) * x + y);
+        yIntercept = (-((double)slopeY/slopeX) * x + y);
         return yIntercept;
     }
 
@@ -39,9 +39,9 @@ public class LinearEquation {
     }
     private String slopeIntForm() {
         if (yIntercept >= 0) {
-            return "y = " + slopeY + "/" + slopeX + "x + " + (int) yIntercept;
+            return "y = " + slopeY + "/" + slopeX + "x + " + dRound.format(yIntercept());
         } else if (yIntercept < 0) {
-            return "y = " + slopeY + "/" + slopeX + "x - " + Math.abs((int) yIntercept);
+            return "y = " + slopeY + "/" + slopeX + "x - " + dRound.format(Math.abs(yIntercept()));
         }
         return null;
     }
@@ -49,8 +49,8 @@ public class LinearEquation {
         return "("+xvalue+","+yvalue+")";
     }
     public String coordinatePoint(double xvalue){
-        double y3 = slope() * xvalue + yIntercept();
-        return "("+xvalue+","+y3+")";
+        double y3 = (slopeInt * xvalue+yIntercept);
+        return "("+dRound.format(xvalue)+","+ dRound.format(y3) +")";
 
     }
 
